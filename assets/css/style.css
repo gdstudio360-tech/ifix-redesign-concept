@@ -2932,3 +2932,496 @@ html[data-theme="light"] .back-to-top:hover {
   }
 
 }
+
+/* =====================================================
+   V45 - DEMO AI ASSISTANT
+   ===================================================== */
+
+.ifix-ai {
+  position: fixed;
+  left: 24px;
+  bottom: 24px;
+  z-index: 1400;
+}
+
+
+/* LAUNCHER */
+
+.ifix-ai-launcher {
+  min-height: 48px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 0 17px;
+
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 999px;
+
+  background: rgba(18,21,22,.94);
+  color: #f7f7f4;
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.22);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  transition:
+    transform .2s ease,
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.ifix-ai-launcher:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(228,182,83,.40);
+}
+
+.ifix-ai-launcher-icon {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+  color: #17130a;
+
+  font-size: 14px;
+}
+
+
+/* PANEL */
+
+.ifix-ai-panel {
+  position: absolute;
+
+  left: 0;
+  bottom: 60px;
+
+  width: min(390px, calc(100vw - 48px));
+  max-height: min(620px, calc(100vh - 140px));
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: rgba(18,21,22,.98);
+
+  border:
+    1px solid rgba(255,255,255,.12);
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.35);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(10px) scale(.98);
+
+  transform-origin: bottom left;
+
+  transition:
+    opacity .22s ease,
+    visibility .22s ease,
+    transform .22s ease;
+}
+
+.ifix-ai.open .ifix-ai-panel {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translateY(0) scale(1);
+}
+
+
+/* HEADER */
+
+.ifix-ai-header {
+  min-height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 14px 16px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.09);
+}
+
+.ifix-ai-title {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.ifix-ai-avatar {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+  color: #17130a;
+
+  font-size: 16px;
+}
+
+.ifix-ai-title div {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.ifix-ai-title strong {
+  font-size: 14px;
+}
+
+.ifix-ai-title div > span {
+  color: #81898b;
+
+  font-size: 10px;
+}
+
+.ifix-ai-close {
+  width: 36px;
+  height: 36px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+  color: #aeb4b6;
+
+  cursor: pointer;
+
+  font-size: 25px;
+
+  line-height: 1;
+}
+
+.ifix-ai-close:hover {
+  background: rgba(255,255,255,.06);
+  color: white;
+}
+
+
+/* MESSAGES */
+
+.ifix-ai-messages {
+  min-height: 175px;
+
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 11px;
+
+  padding: 18px;
+}
+
+.ifix-ai-message {
+  max-width: 88%;
+
+  padding: 12px 14px;
+
+  border-radius: 14px;
+
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.ifix-ai-message p {
+  margin: 4px 0 0;
+}
+
+.ifix-ai-message.assistant {
+  align-self: flex-start;
+
+  background: #232729;
+  color: #daddde;
+
+  border-bottom-left-radius: 4px;
+}
+
+.ifix-ai-message.user {
+  align-self: flex-end;
+
+  background: var(--accent);
+  color: #17130a;
+
+  border-bottom-right-radius: 4px;
+}
+
+.ifix-ai-message-label {
+  display: block;
+
+  color: var(--accent);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: .08em;
+
+  text-transform: uppercase;
+}
+
+.ifix-ai-message.user .ifix-ai-message-label {
+  color: rgba(0,0,0,.55);
+}
+
+
+/* QUICK QUESTIONS */
+
+.ifix-ai-quick {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  padding:
+    0 18px 15px;
+}
+
+.ifix-ai-quick button {
+  padding: 8px 10px;
+
+  border:
+    1px solid rgba(255,255,255,.10);
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.035);
+  color: #b6bbbd;
+
+  cursor: pointer;
+
+  font-size: 10px;
+
+  transition:
+    border-color .2s ease,
+    color .2s ease,
+    background .2s ease;
+}
+
+.ifix-ai-quick button:hover {
+  color: white;
+
+  border-color:
+    rgba(228,182,83,.35);
+
+  background:
+    rgba(228,182,83,.06);
+}
+
+
+/* INPUT */
+
+.ifix-ai-form {
+  display: grid;
+
+  grid-template-columns:
+    1fr 42px;
+
+  gap: 8px;
+
+  padding: 14px 16px;
+
+  border-top:
+    1px solid rgba(255,255,255,.09);
+}
+
+.ifix-ai-form input {
+  min-width: 0;
+  height: 43px;
+
+  padding:
+    0 13px;
+
+  border:
+    1px solid rgba(255,255,255,.11);
+
+  border-radius: 10px;
+
+  outline: none;
+
+  background: #0f1112;
+  color: white;
+
+  font-size: 12px;
+}
+
+.ifix-ai-form input:focus {
+  border-color: var(--accent);
+}
+
+.ifix-ai-form button {
+  width: 42px;
+  height: 42px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: var(--accent);
+  color: #17130a;
+
+  cursor: pointer;
+
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.ifix-ai-demo-note {
+  margin: 0;
+
+  padding:
+    0 16px 14px;
+
+  color: #666e70;
+
+  font-size: 9px;
+  line-height: 1.4;
+}
+
+
+/* LIGHT MODE */
+
+html[data-theme="light"] .ifix-ai-launcher {
+  background: rgba(255,255,255,.95);
+  color: #171a1b;
+
+  border-color:
+    rgba(0,0,0,.10);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,.10);
+}
+
+html[data-theme="light"] .ifix-ai-panel {
+  background:
+    rgba(250,249,246,.985);
+
+  border-color:
+    rgba(0,0,0,.10);
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.14);
+}
+
+html[data-theme="light"] .ifix-ai-header,
+html[data-theme="light"] .ifix-ai-form {
+  border-color:
+    rgba(0,0,0,.08);
+}
+
+html[data-theme="light"] .ifix-ai-close {
+  color: #60686a;
+}
+
+html[data-theme="light"] .ifix-ai-close:hover {
+  background:
+    rgba(0,0,0,.05);
+
+  color: #171a1b;
+}
+
+html[data-theme="light"] .ifix-ai-message.assistant {
+  background: #ebe8e1;
+  color: #33393a;
+}
+
+html[data-theme="light"] .ifix-ai-quick button {
+  color: #555d5f;
+
+  border-color:
+    rgba(0,0,0,.10);
+
+  background: rgba(0,0,0,.02);
+}
+
+html[data-theme="light"] .ifix-ai-form input {
+  background: white;
+  color: #171a1b;
+
+  border-color:
+    rgba(0,0,0,.12);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+
+  .ifix-ai {
+    left: 14px;
+
+    /* above mobile navigation */
+    bottom: 82px;
+  }
+
+  .ifix-ai-launcher {
+    min-height: 44px;
+
+    padding:
+      0 12px;
+  }
+
+  .ifix-ai-launcher-text {
+    display: none;
+  }
+
+  .ifix-ai-panel {
+    position: fixed;
+
+    left: 12px;
+    right: 12px;
+
+    bottom: 138px;
+
+    width: auto;
+    max-height:
+      calc(100vh - 180px);
+
+    transform-origin: bottom left;
+  }
+
+}
+
+
+/* PDF */
+
+@media print {
+
+  .ifix-ai {
+    display: none !important;
+  }
+
+}

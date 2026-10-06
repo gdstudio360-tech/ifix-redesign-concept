@@ -397,3 +397,210 @@ if (backToTop) {
   );
 
 }
+
+/* =====================================================
+   V45 - DEMO AI ASSISTANT
+   ===================================================== */
+
+const ifixAI =
+  document.querySelector("#ifix-ai");
+
+const ifixAILauncher =
+  document.querySelector("#ifix-ai-launcher");
+
+const ifixAIClose =
+  document.querySelector("#ifix-ai-close");
+
+const ifixAIMessages =
+  document.querySelector("#ifix-ai-messages");
+
+const ifixAIForm =
+  document.querySelector("#ifix-ai-form");
+
+const ifixAIInput =
+  document.querySelector("#ifix-ai-input");
+
+
+function addAIMessage(type, text) {
+
+  if (!ifixAIMessages) return;
+
+  const message =
+    document.createElement("div");
+
+  message.className =
+    `ifix-ai-message ${type}`;
+
+  const label =
+    type === "user"
+    ? "You"
+    : "iFix AI";
+
+  message.innerHTML =
+    `<span class="ifix-ai-message-label">${label}</span>
+     <p></p>`;
+
+  message
+    .querySelector("p")
+    .textContent = text;
+
+  ifixAIMessages.appendChild(message);
+
+  ifixAIMessages.scrollTop =
+    ifixAIMessages.scrollHeight;
+
+}
+
+
+function openAI() {
+
+  if (!ifixAI) return;
+
+  ifixAI.classList.add("open");
+
+  ifixAILauncher?.setAttribute(
+    "aria-expanded",
+    "true"
+  );
+
+}
+
+
+function closeAI() {
+
+  if (!ifixAI) return;
+
+  ifixAI.classList.remove("open");
+
+  ifixAILauncher?.setAttribute(
+    "aria-expanded",
+    "false"
+  );
+
+}
+
+
+ifixAILauncher?.addEventListener(
+  "click",
+  () => {
+
+    if (ifixAI?.classList.contains("open")) {
+      closeAI();
+    } else {
+      openAI();
+    }
+
+  }
+);
+
+
+ifixAIClose?.addEventListener(
+  "click",
+  closeAI
+);
+
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "Escape"
+      &&
+      ifixAI?.classList.contains("open")
+    ) {
+      closeAI();
+    }
+
+  }
+);
+
+
+const demoAnswers = {
+
+  services:
+    "iFix provides property maintenance, renovations, extensions and building work, fire doors and cladding, electrical and gas services, plus water and drainage work.",
+
+  areas:
+    "This concept positions iFix across Ipswich, Suffolk and Essex.",
+
+  quote:
+    "You can use the Request a Free Quote form below. Add the service you need, postcode, preferred timescale and optional project photos.",
+
+  reviews:
+    "The concept highlights iFix's independent customer reputation, including Checkatrade and TrustATrader reviews."
+
+};
+
+
+document
+  .querySelectorAll("[data-ai-question]")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        const key =
+          button.dataset.aiQuestion;
+
+        addAIMessage(
+          "user",
+          button.textContent.trim()
+        );
+
+        setTimeout(
+          () => {
+
+            addAIMessage(
+              "assistant",
+              demoAnswers[key]
+              ||
+              "This is a demo assistant."
+            );
+
+          },
+          280
+        );
+
+      }
+    );
+
+  });
+
+
+ifixAIForm?.addEventListener(
+  "submit",
+  event => {
+
+    event.preventDefault();
+
+    const question =
+      ifixAIInput?.value.trim();
+
+    if (!question) return;
+
+
+    addAIMessage(
+      "user",
+      question
+    );
+
+
+    ifixAIInput.value = "";
+
+
+    setTimeout(
+      () => {
+
+        addAIMessage(
+          "assistant",
+          "This is a website demo. Full AI assistance would be available on the live version, where the assistant could answer detailed questions, recommend services and help qualify enquiries."
+        );
+
+      },
+      350
+    );
+
+  }
+);
