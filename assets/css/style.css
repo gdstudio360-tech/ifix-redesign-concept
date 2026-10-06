@@ -2787,3 +2787,55 @@ html[data-theme="light"] .review-card:hover {
   }
 
 }
+
+/* =========================================
+   V42 - SAFARI PDF IMAGE FIX
+   ========================================= */
+
+@media print {
+
+  html,
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Safari PDF sometimes renders transparent overlays as solid black */
+  .hero-image-shade {
+    display: none !important;
+  }
+
+  .project-card::after {
+    display: none !important;
+  }
+
+  /* Keep project text readable without the gradient overlay */
+  .project-overlay {
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+
+    width: auto !important;
+
+    padding: 14px 16px !important;
+
+    background: rgba(10,12,12,.82) !important;
+
+    border-radius: 8px !important;
+
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .hero-visual img,
+  .project-card img,
+  .why-image img {
+    opacity: 1 !important;
+    filter: none !important;
+    visibility: visible !important;
+
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+}
