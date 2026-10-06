@@ -4534,3 +4534,180 @@ html[data-theme="light"]
   }
 
 }
+
+/* =====================================================
+   V54 - 3D FLOATING SERVICE CARDS
+   ===================================================== */
+
+.service-grid {
+  perspective: 1400px;
+}
+
+.service-card {
+  --rx: 0deg;
+  --ry: 0deg;
+  --tx: 0px;
+  --ty: 0px;
+
+  position: relative;
+
+  transform-style: preserve-3d;
+  transform:
+    perspective(1400px)
+    rotateX(var(--rx))
+    rotateY(var(--ry))
+    translate3d(var(--tx), var(--ty), 0);
+
+  will-change:
+    transform,
+    box-shadow;
+
+  transition:
+    transform .22s ease,
+    box-shadow .28s ease,
+    border-color .28s ease,
+    background-color .28s ease;
+}
+
+
+/* base floating feel */
+.service-card {
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.10),
+    0 0 0 1px rgba(255,255,255,.03);
+}
+
+html[data-theme="light"] .service-card {
+  box-shadow:
+    0 10px 24px rgba(0,0,0,.06),
+    0 0 0 1px rgba(0,0,0,.03);
+}
+
+
+/* ambient “LED behind TV” glow */
+.service-card.is-tilting,
+.service-card:hover {
+  box-shadow:
+    0 24px 55px rgba(0,0,0,.22),
+    0 0 0 1px rgba(228,182,83,.12),
+    0 0 24px rgba(228,182,83,.10),
+    0 0 58px rgba(228,182,83,.06);
+}
+
+html[data-theme="light"] .service-card.is-tilting,
+html[data-theme="light"] .service-card:hover {
+  box-shadow:
+    0 20px 44px rgba(0,0,0,.09),
+    0 0 0 1px rgba(201,147,50,.12),
+    0 0 20px rgba(201,147,50,.08),
+    0 0 46px rgba(201,147,50,.05);
+}
+
+
+/* featured card can glow a bit warmer */
+.service-featured.is-tilting,
+.service-featured:hover {
+  box-shadow:
+    0 26px 60px rgba(150,103,25,.22),
+    0 0 0 1px rgba(255,255,255,.14),
+    0 0 26px rgba(255,214,120,.16),
+    0 0 70px rgba(228,182,83,.10);
+}
+
+
+/* make inner elements feel layered */
+.service-photo,
+.service-icon,
+.service-number,
+.service-card h3,
+.service-card > p,
+.service-card > a {
+  position: relative;
+  z-index: 2;
+
+  transform: translateZ(0);
+  transition:
+    transform .25s ease;
+}
+
+.service-card.is-tilting .service-photo,
+.service-card:hover .service-photo {
+  transform: translateZ(14px);
+}
+
+.service-card.is-tilting .service-icon,
+.service-card:hover .service-icon {
+  transform: translateZ(28px);
+}
+
+.service-card.is-tilting h3,
+.service-card:hover h3 {
+  transform: translateZ(18px);
+}
+
+.service-card.is-tilting .service-number,
+.service-card:hover .service-number,
+.service-card.is-tilting > p,
+.service-card:hover > p,
+.service-card.is-tilting > a,
+.service-card:hover > a {
+  transform: translateZ(12px);
+}
+
+
+/* optional tiny sheen */
+.service-card::selection {
+  background: rgba(228,182,83,.20);
+}
+
+
+/* keep effect calmer on small screens */
+@media (max-width: 980px) {
+
+  .service-grid {
+    perspective: none;
+  }
+
+  .service-card {
+    transform: none !important;
+    will-change: auto;
+  }
+
+  .service-card.is-tilting,
+  .service-card:hover {
+    box-shadow:
+      0 16px 32px rgba(0,0,0,.12),
+      0 0 0 1px rgba(228,182,83,.08);
+  }
+
+  .service-photo,
+  .service-icon,
+  .service-number,
+  .service-card h3,
+  .service-card > p,
+  .service-card > a {
+    transform: none !important;
+  }
+
+}
+
+
+/* accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  .service-card {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .service-photo,
+  .service-icon,
+  .service-number,
+  .service-card h3,
+  .service-card > p,
+  .service-card > a {
+    transform: none !important;
+    transition: none !important;
+  }
+
+}

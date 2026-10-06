@@ -604,3 +604,61 @@ ifixAIForm?.addEventListener(
 
   }
 );
+
+/* =====================================================
+   V54 - SERVICE CARD 3D TILT
+   ===================================================== */
+
+(function () {
+  const canTilt =
+    window.matchMedia("(hover: hover) and (pointer: fine)").matches &&
+    !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!canTilt) return;
+
+  const cards = document.querySelectorAll(".service-card");
+
+  cards.forEach((card) => {
+    let rafId = null;
+
+    const resetCard = () => {
+      card.classList.remove("is-tilting");
+      card.style.setProperty("--rx", "0deg");
+      card.style.setProperty("--ry", "0deg");
+      card.style.setProperty("--tx", "0px");
+      card.style.setProperty("--ty", "0px");
+    };
+
+    const updateCard = (event) => {
+      const rect = card.getBoundingClientRect();
+
+      const px = (event.clientX - rect.left) / rect.width;
+      const py = (event.clientY - rect.top) / rect.height;
+
+      const rotateY = (px - 0.5) * 10;   // left/right
+      const rotateX = (0.5 - py) * 8;    // up/down
+
+      const moveX = (px - 0.5) * 4;
+      const moveY = (py - 0.5) * -4;
+
+      card.style.setProperty("--rx", `${rotateX.toFixed(2)}deg`);
+      card.style.setProperty("--ry", `${rotateY.toFixed(2)}deg`);
+      card.style.setProperty("--tx", `${moveX.toFixed(2)}px`);
+      card.style.setProperty("--ty", `${moveY.toFixed(2)}px`);
+    };
+
+    card.addEventListener("pointerenter", () => {
+      card.classList.add("is-tilting");
+    });
+
+    card.addEventListener("pointermove", (event) => {
+      if (rafId) cancelAnimationFrame(rafId);
+
+      rafId = requestAnimationFrame(() => {
+        updateCard(event);
+      });
+    });
+
+    card.addEventListener("pointerleave", resetCard);
+  });
+})();
