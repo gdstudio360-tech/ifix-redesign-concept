@@ -2765,3 +2765,25 @@ html[data-theme="light"] .review-card:hover {
   }
 
 }
+
+/* =============================
+   PRINT / PDF FIX
+   ============================= */
+
+@media print {
+
+  .reveal-v40 {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .service-card,
+  .project-card,
+  .review-card,
+  .why-item,
+  .quote-form {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+}
