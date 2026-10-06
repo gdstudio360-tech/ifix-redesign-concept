@@ -3906,3 +3906,234 @@ html[data-theme="light"] .service-featured .service-icon {
   }
 
 }
+
+/* =====================================================
+   V50 - SERVICE CARD PHOTOS
+   ===================================================== */
+
+.service-card {
+  min-height: 405px;
+}
+
+
+/* PHOTO STRIP */
+
+.service-photo {
+  position: relative;
+
+  height: 128px;
+
+  flex: 0 0 128px;
+
+  margin:
+    -30px
+    -30px
+    25px;
+
+  overflow: hidden;
+
+  border-bottom:
+    1px solid var(--line);
+}
+
+
+.service-photo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.02);
+
+  filter:
+    saturate(.82)
+    contrast(1.04);
+
+  transition:
+    transform .7s cubic-bezier(.2,.7,.2,1),
+    filter .35s ease;
+}
+
+
+/* fade photo into card */
+
+.service-photo::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(18,21,22,0) 38%,
+      rgba(18,21,22,.18) 62%,
+      var(--bg-soft) 100%
+    );
+}
+
+
+.service-card:hover .service-photo img {
+  transform: scale(1.085);
+
+  filter:
+    saturate(.95)
+    contrast(1.05);
+}
+
+
+/* ICON OVER PHOTO */
+
+.service-card .service-icon {
+  z-index: 4;
+
+  top: 18px;
+  right: 18px;
+
+  background:
+    rgba(13,15,15,.78);
+
+  border-color:
+    rgba(255,255,255,.18);
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+
+.service-card .service-icon svg {
+  color: var(--accent);
+}
+
+
+/* tighten content after adding images */
+
+.service-card .service-number {
+  margin-bottom: 28px;
+}
+
+
+.service-card h3 {
+  margin:
+    0 0 12px;
+}
+
+
+.service-card > p {
+  margin-bottom: 24px;
+}
+
+
+.service-card > a {
+  margin-top: auto;
+}
+
+
+/* FEATURED GOLD CARD */
+
+.service-featured .service-photo::after {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(228,182,83,.05) 28%,
+      rgba(228,182,83,.35) 65%,
+      var(--accent) 100%
+    );
+}
+
+
+.service-featured .service-photo img {
+  filter:
+    saturate(.72)
+    contrast(1.04);
+}
+
+
+.service-featured .service-icon {
+  color: #17130a;
+
+  background:
+    rgba(228,182,83,.88);
+
+  border-color:
+    rgba(255,255,255,.25);
+}
+
+
+.service-featured .service-icon svg {
+  color: #17130a;
+}
+
+
+/* LIGHT THEME */
+
+html[data-theme="light"] .service-photo::after {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(250,249,246,0) 38%,
+      rgba(250,249,246,.20) 64%,
+      #faf9f6 100%
+    );
+}
+
+
+html[data-theme="light"]
+.service-featured .service-photo::after {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(228,182,83,.05) 28%,
+      rgba(228,182,83,.35) 65%,
+      var(--accent) 100%
+    );
+}
+
+
+html[data-theme="light"]
+.service-card:not(.service-featured)
+.service-icon {
+  background:
+    rgba(255,255,255,.86);
+
+  border-color:
+    rgba(0,0,0,.10);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 680px) {
+
+  .service-card {
+    min-height: 390px;
+  }
+
+
+  .service-photo {
+    height: 135px;
+
+    flex-basis: 135px;
+
+    margin:
+      -30px
+      -30px
+      25px;
+  }
+
+}
+
+
+/* PDF */
+
+@media print {
+
+  .service-photo img {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+}
