@@ -2458,3 +2458,73 @@ html[data-theme="light"] .ifix-logo-selected {
     width: 150px !important;
   }
 }
+
+/* ======================================================
+   IFIX EXACT LOGO V30
+   preserve original aspect ratio — NO DISTORTION
+   ====================================================== */
+
+.ifix-logo-exact {
+  width: auto !important;
+  height: 66px !important;
+  max-width: none !important;
+  object-fit: contain !important;
+  flex-shrink: 0;
+}
+
+.ifix-logo-light-exact {
+  display: none !important;
+}
+
+html[data-theme="dark"] .ifix-logo-dark-exact {
+  display: block !important;
+}
+
+html[data-theme="dark"] .ifix-logo-light-exact {
+  display: none !important;
+}
+
+html[data-theme="light"] .ifix-logo-dark-exact {
+  display: none !important;
+}
+
+html[data-theme="light"] .ifix-logo-light-exact {
+  display: block !important;
+}
+
+.site-header .brand-image {
+  width: auto !important;
+  height: 70px !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  overflow: visible !important;
+}
+
+.footer-logo .ifix-logo-exact {
+  height: 82px !important;
+  width: auto !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 980px) {
+
+  .ifix-logo-exact {
+    height: 58px !important;
+    width: auto !important;
+  }
+
+}
+
+
+@media (max-width: 680px) {
+
+  .ifix-logo-exact {
+    height: 52px !important;
+    width: auto !important;
+  }
+
+}
