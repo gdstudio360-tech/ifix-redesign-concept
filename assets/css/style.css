@@ -1,0 +1,144 @@
+:root {
+  --bg: #101214;
+  --surface: #171a1d;
+  --text: #ffffff;
+  --muted: #aeb4ba;
+  --accent: #e7b447;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.concept-bar {
+  padding: 9px 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #d4d7da;
+  background: #08090a;
+}
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 8%;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,.08), transparent 35%),
+    linear-gradient(135deg, #101214 0%, #181c20 100%);
+}
+
+.hero-content {
+  max-width: 850px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+h1 {
+  margin: 20px 0;
+  max-width: 900px;
+  font-size: clamp(46px, 7vw, 92px);
+  line-height: .98;
+  letter-spacing: -4px;
+}
+
+.hero-text {
+  max-width: 650px;
+  margin: 28px 0;
+  color: var(--muted);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 24px;
+  border-radius: 6px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #111;
+}
+
+.btn-secondary {
+  color: white;
+  border: 1px solid rgba(255,255,255,.3);
+}
+
+.trust-row {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 55px;
+  color: #c7ccd0;
+  font-size: 14px;
+}
+
+.placeholder-section {
+  padding: 120px 8%;
+  background: var(--surface);
+}
+
+.placeholder-section p {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.placeholder-section h2 {
+  max-width: 850px;
+  font-size: clamp(32px, 5vw, 62px);
+}
+
+@media (max-width: 700px) {
+  .hero {
+    padding: 60px 22px;
+  }
+
+  h1 {
+    letter-spacing: -2px;
+  }
+
+  .hero-text {
+    font-size: 17px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    text-align: center;
+  }
+
+  .trust-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
