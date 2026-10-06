@@ -318,64 +318,150 @@ if (!reducedMotion && "IntersectionObserver" in window) {
   });
 }
 
-/* IFIX V43 — START FROM HERO AFTER RELOAD */
-
-if ("scrollRestoration" in history) {
-  history.scrollRestoration = "manual";
-}
-
-function ifixWasReloaded() {
-  const nav = performance.getEntriesByType?.("navigation");
-
-  if (nav && nav.length) {
-    return nav[0].type === "reload";
-  }
-
-  return performance.navigation &&
-         performance.navigation.type === 1;
-}
-
-if (ifixWasReloaded()) {
-
-  if (window.location.hash) {
-    history.replaceState(
-      null,
-      "",
-      window.location.pathname + window.location.search
-    );
-  }
-
-  window.addEventListener(
-    "pageshow",
-    () => {
-      requestAnimationFrame(() => {
-        window.scrollTo({
-          top: 0,
-          left: 0,
-          behavior: "auto"
-        });
-      });
-    },
-    { once: true }
-  );
-}
-
-
-/* V44 - BACK TO TOP */
+/* =====================================================
+   V60 - SMOOTH TOP RETURN
+   ===================================================== */
 
 const backToTop =
   document.querySelector("#back-to-top");
 
+
+function ifixSmoothToTop() {
+
+  const startY =
+    window.scrollY ||
+    document.documentElement.scrollTop ||
+    0;
+
+  if (startY <= 1) {
+    window.scrollTo(0, 0);
+    return;
+  }
+
+
+  if (
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+  ) {
+    window.scrollTo(0, 0);
+    return;
+  }
+
+
+  const root =
+    document.documentElement;
+
+  const previousScrollBehavior =
+    root.style.scrollBehavior;
+
+
+  /*
+     CSS smooth scrolling must be temporarily disabled
+     because we are controlling every animation frame.
+  */
+
+  root.style.scrollBehavior = "auto";
+  root.classList.add("ifix-returning-top");
+
+
+  const startTime =
+    performance.now();
+
+
+  /*
+     Long pages get slightly more time,
+     but never become painfully slow.
+  */
+
+  const duration =
+    Math.min(
+      950,
+      Math.max(
+        620,
+        startY * 0.18
+      )
+    );
+
+
+  function easeInOutCubic(t) {
+
+    return t < 0.5
+
+      ? 4 * t * t * t
+
+      : 1 -
+        Math.pow(
+          -2 * t + 2,
+          3
+        ) / 2;
+  }
+
+
+  function frame(now) {
+
+    const progress =
+      Math.min(
+        1,
+        (now - startTime) /
+        duration
+      );
+
+
+    const eased =
+      easeInOutCubic(progress);
+
+
+    const y =
+      startY *
+      (1 - eased);
+
+
+    window.scrollTo(
+      0,
+      Math.round(y)
+    );
+
+
+    if (progress < 1) {
+
+      requestAnimationFrame(frame);
+
+    } else {
+
+      window.scrollTo(0, 0);
+
+      root.classList.remove(
+        "ifix-returning-top"
+      );
+
+      root.style.scrollBehavior =
+        previousScrollBehavior;
+
+    }
+
+  }
+
+
+  requestAnimationFrame(frame);
+
+}
+
+
 if (backToTop) {
 
   const updateBackToTop = () => {
+
     backToTop.classList.toggle(
       "show",
       window.scrollY > 500
     );
+
   };
 
+
   updateBackToTop();
+
 
   window.addEventListener(
     "scroll",
@@ -383,20 +469,30 @@ if (backToTop) {
     { passive: true }
   );
 
+
   backToTop.addEventListener(
     "click",
-    () => {
+    event => {
 
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth"
-      });
+      event.preventDefault();
+
+      backToTop.blur();
+
+      ifixSmoothToTop();
 
     }
   );
 
 }
+
+
+/*
+   Reload:
+   scrollRestoration jau išjungtas HEAD'e,
+   todėl nebedarome vėlyvo pageshow scrollTo().
+   Būtent jis sukeldavo matomą persėdimą.
+*/
+
 
 /* =====================================================
    V45 - DEMO AI ASSISTANT

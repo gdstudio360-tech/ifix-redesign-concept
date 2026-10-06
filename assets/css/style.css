@@ -4972,3 +4972,60 @@ html[data-theme="light"] .why-image::after {
   }
 
 }
+
+/* =====================================================
+   V60 - SMOOTHER RETURN TO TOP
+   ===================================================== */
+
+/*
+   During automatic return to top Safari doesn't need
+   to constantly recalculate the expensive header blur.
+*/
+
+html.ifix-returning-top .site-header {
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+
+  background:
+    rgba(12,14,15,.97) !important;
+}
+
+
+html[data-theme="light"].ifix-returning-top
+.site-header {
+  background:
+    rgba(247,245,240,.98) !important;
+}
+
+
+/*
+   Avoid small hover / transition movements
+   while the whole page is travelling upward.
+*/
+
+html.ifix-returning-top
+.service-card,
+
+html.ifix-returning-top
+.project-card,
+
+html.ifix-returning-top
+.review-card,
+
+html.ifix-returning-top
+.why-image img {
+
+  transition: none !important;
+
+}
+
+
+/*
+   The final top position is exact.
+*/
+
+html,
+body {
+  scroll-margin-top: 0;
+}
+
