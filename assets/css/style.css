@@ -4855,3 +4855,120 @@ html[data-theme="light"]
   }
 
 }
+
+/* =====================================================
+   V56 - WHY IFIX IMAGE BLEND
+   ===================================================== */
+
+/* Exact background colour for the blend */
+
+html[data-theme="dark"] .why-section {
+  --why-bg: #171a1c;
+  background: var(--why-bg);
+}
+
+html[data-theme="light"] .why-section {
+  --why-bg: #eae7e0;
+  background: var(--why-bg);
+}
+
+
+/* IMAGE CONTAINER */
+
+.why-image {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Blend the right edge into the content background */
+
+.why-image::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(23,26,28,0) 48%,
+      rgba(23,26,28,.08) 60%,
+      rgba(23,26,28,.28) 72%,
+      rgba(23,26,28,.58) 84%,
+      rgba(23,26,28,.88) 94%,
+      var(--why-bg) 100%
+    );
+}
+
+
+/* LIGHT MODE */
+
+html[data-theme="light"] .why-image::after {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(234,231,224,0) 48%,
+      rgba(234,231,224,.08) 60%,
+      rgba(234,231,224,.28) 72%,
+      rgba(234,231,224,.58) 84%,
+      rgba(234,231,224,.88) 94%,
+      var(--why-bg) 100%
+    );
+}
+
+
+/*
+   Existing image animation is intentionally untouched:
+   .why-image img
+   .why-section:hover .why-image img
+*/
+
+
+/* TABLET / MOBILE:
+   image sits above content, so blend downward instead */
+
+@media (max-width: 980px) {
+
+  .why-image::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(23,26,28,0) 48%,
+        rgba(23,26,28,.08) 62%,
+        rgba(23,26,28,.30) 74%,
+        rgba(23,26,28,.62) 86%,
+        rgba(23,26,28,.90) 95%,
+        var(--why-bg) 100%
+      );
+  }
+
+  html[data-theme="light"] .why-image::after {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(234,231,224,0) 48%,
+        rgba(234,231,224,.08) 62%,
+        rgba(234,231,224,.30) 74%,
+        rgba(234,231,224,.62) 86%,
+        rgba(234,231,224,.90) 95%,
+        var(--why-bg) 100%
+      );
+  }
+
+}
+
+
+/* PDF — don't cover the image */
+
+@media print {
+
+  .why-image::after {
+    display: none !important;
+  }
+
+}
