@@ -360,3 +360,40 @@ if (ifixWasReloaded()) {
   );
 }
 
+
+/* V44 - BACK TO TOP */
+
+const backToTop =
+  document.querySelector("#back-to-top");
+
+if (backToTop) {
+
+  const updateBackToTop = () => {
+    backToTop.classList.toggle(
+      "show",
+      window.scrollY > 500
+    );
+  };
+
+  updateBackToTop();
+
+  window.addEventListener(
+    "scroll",
+    updateBackToTop,
+    { passive: true }
+  );
+
+  backToTop.addEventListener(
+    "click",
+    () => {
+
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth"
+      });
+
+    }
+  );
+
+}
