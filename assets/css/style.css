@@ -4711,3 +4711,147 @@ html[data-theme="light"] .service-card:hover {
   }
 
 }
+
+/* =====================================================
+   V55 - ROUNDED FLOATING SERVICE CARDS
+   ===================================================== */
+
+.service-grid {
+  gap: 18px !important;
+
+  border-top: 0 !important;
+  border-left: 0 !important;
+
+  perspective: 1400px;
+}
+
+
+/* INDIVIDUAL FLOATING CARDS */
+
+.service-card {
+  border-radius: 18px !important;
+
+  border:
+    1px solid rgba(255,255,255,.085) !important;
+
+  background-clip: padding-box;
+
+  /* keep 3D + glow visible */
+  overflow: visible !important;
+}
+
+
+/* LIGHT MODE BORDER */
+
+html[data-theme="light"]
+.service-card {
+  border-color:
+    rgba(0,0,0,.09) !important;
+}
+
+
+/* FEATURED GOLD CARD */
+
+.service-card.service-featured {
+  border-color:
+    rgba(255,255,255,.18) !important;
+}
+
+
+/* PHOTO TOP CORNERS */
+
+.service-photo {
+  border-radius:
+    18px 18px 0 0 !important;
+
+  overflow: hidden !important;
+}
+
+
+/* blend layer must follow photo corners */
+
+.service-photo::after {
+  border-radius:
+    18px 18px 0 0 !important;
+}
+
+
+/* glow / background layer follows card shape */
+
+.service-card::after {
+  border-radius:
+    inherit !important;
+}
+
+
+/* GOLD TOP HOVER LINE — don't cut across rounded corner */
+
+.service-card::before {
+  left: 18px !important;
+  right: 18px !important;
+
+  width: auto !important;
+
+  border-radius:
+    999px !important;
+}
+
+
+/* EXTRA FLOATING DEPTH */
+
+.service-card {
+  box-shadow:
+    0 14px 30px rgba(0,0,0,.12),
+    0 4px 10px rgba(0,0,0,.07);
+}
+
+
+.service-card:hover,
+.service-card.is-tilting {
+  box-shadow:
+    0 28px 60px rgba(0,0,0,.26),
+    0 10px 25px rgba(0,0,0,.15),
+    0 0 28px rgba(228,182,83,.11),
+    0 0 70px rgba(228,182,83,.055);
+}
+
+
+html[data-theme="light"]
+.service-card {
+  box-shadow:
+    0 13px 30px rgba(0,0,0,.055),
+    0 3px 8px rgba(0,0,0,.035);
+}
+
+
+html[data-theme="light"]
+.service-card:hover,
+html[data-theme="light"]
+.service-card.is-tilting {
+  box-shadow:
+    0 25px 55px rgba(0,0,0,.10),
+    0 8px 20px rgba(0,0,0,.055),
+    0 0 25px rgba(201,147,50,.09);
+}
+
+
+/* MOBILE — slightly softer rounding */
+
+@media (max-width: 680px) {
+
+  .service-grid {
+    gap: 14px !important;
+  }
+
+  .service-card {
+    border-radius:
+      16px !important;
+  }
+
+  .service-photo,
+  .service-photo::after {
+    border-radius:
+      16px 16px 0 0 !important;
+  }
+
+}
