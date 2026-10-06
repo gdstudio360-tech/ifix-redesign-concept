@@ -3425,3 +3425,81 @@ html[data-theme="light"] .ifix-ai-form input {
   }
 
 }
+
+/* =========================================
+   V46 - MOBILE AI ASSISTANT VISIBILITY
+   ========================================= */
+
+@media (max-width: 680px) {
+
+  .ifix-ai {
+    left: 16px;
+    bottom: 84px;
+  }
+
+  .ifix-ai-launcher {
+    min-width: 138px;
+    min-height: 48px;
+
+    padding: 0 14px 0 8px;
+
+    gap: 9px;
+
+    border-radius: 999px;
+
+    box-shadow:
+      0 12px 35px rgba(0,0,0,.30);
+  }
+
+  .ifix-ai-launcher-icon {
+    width: 32px;
+    height: 32px;
+
+    flex: 0 0 32px;
+
+    font-size: 15px;
+  }
+
+  .ifix-ai-launcher-text {
+    display: inline-block !important;
+
+    color: inherit;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: .01em;
+
+    white-space: nowrap;
+  }
+
+  .ifix-ai-panel {
+    left: 10px;
+    right: 10px;
+
+    bottom: 142px;
+
+    width: auto;
+
+    max-height:
+      calc(100vh - 190px);
+
+    border-radius: 18px;
+  }
+
+}
+
+
+/* very small phones */
+
+@media (max-width: 370px) {
+
+  .ifix-ai-launcher {
+    min-width: 112px;
+  }
+
+  .ifix-ai-launcher-text {
+    font-size: 10px;
+  }
+
+}
