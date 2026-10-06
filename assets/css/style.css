@@ -5622,3 +5622,259 @@ html[data-theme="light"] .why-image::after {
   }
 
 }
+
+/* =====================================================
+   V59 - MOBILE RELIABILITY
+   Safari + Chrome
+   ===================================================== */
+
+@media (max-width: 980px) {
+
+  /* --------------------------------
+     REMOVE SCROLL-REVEAL RISK
+     -------------------------------- */
+
+  .reveal-v40,
+  .reveal-v40.visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+
+  /* --------------------------------
+     DISABLE HEAVY 3D ON TOUCH DEVICES
+     -------------------------------- */
+
+  .service-card,
+  .service-card:hover,
+  .service-card.is-tilting {
+    transform: none !important;
+    transform-style: flat !important;
+    will-change: auto !important;
+  }
+
+  .service-photo,
+  .service-icon,
+  .service-number,
+  .service-card h3,
+  .service-card > p,
+  .service-card > a {
+    transform: none !important;
+    will-change: auto !important;
+  }
+
+}
+
+
+/* =====================================================
+   PHONE HERO - SIMPLE & STABLE
+   ===================================================== */
+
+@media (max-width: 680px) {
+
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+
+    min-height: 0 !important;
+
+    width: auto !important;
+    max-width: none !important;
+
+    margin: 10px !important;
+
+    overflow: hidden !important;
+
+    border-radius: 22px !important;
+  }
+
+
+  .hero-copy {
+    width: 100% !important;
+
+    min-height: 0 !important;
+
+    padding:
+      48px 20px
+      42px !important;
+  }
+
+
+  .hero h1 {
+    max-width: 100% !important;
+
+    font-size:
+      clamp(46px, 13vw, 62px) !important;
+
+    line-height: .95 !important;
+
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+
+  .hero-visual {
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    aspect-ratio: 4 / 3 !important;
+
+    overflow: hidden !important;
+
+    contain: none !important;
+
+    border-radius:
+      0 0 22px 22px !important;
+
+    background: #181b1c;
+  }
+
+
+  .hero-visual > img {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: cover !important;
+    object-position: center center !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: none !important;
+    filter: none !important;
+
+    animation: none !important;
+  }
+
+
+  /* simple blend only */
+  .hero-image-shade {
+    position: absolute !important;
+    inset: 0 !important;
+
+    z-index: 1 !important;
+
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(12,14,15,.60) 0%,
+        rgba(12,14,15,.18) 22%,
+        rgba(12,14,15,0) 46%
+      ) !important;
+
+    pointer-events: none;
+  }
+
+
+  html[data-theme="light"]
+  .hero-image-shade {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(245,243,238,.58) 0%,
+        rgba(245,243,238,.16) 22%,
+        rgba(245,243,238,0) 46%
+      ) !important;
+  }
+
+
+  .hero-badge {
+    z-index: 2 !important;
+  }
+
+
+  /* --------------------------------
+     SERVICE IMAGES
+     -------------------------------- */
+
+  .service-card {
+    overflow: hidden !important;
+  }
+
+
+  .service-photo {
+    position: relative !important;
+
+    width: auto !important;
+
+    height: 155px !important;
+    min-height: 155px !important;
+    flex: 0 0 155px !important;
+
+    overflow: hidden !important;
+  }
+
+
+  .service-photo > img {
+    position: absolute !important;
+
+    inset: 0 !important;
+
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: none !important;
+    filter: none !important;
+
+    transition: none !important;
+    animation: none !important;
+
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+  }
+
+
+  /* --------------------------------
+     PROJECT + WHY IMAGES
+     -------------------------------- */
+
+  .project-card img,
+  .why-image img {
+    display: block !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    object-fit: cover !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    transform: none !important;
+    filter: none !important;
+
+    transition: none !important;
+  }
+
+
+  /* no backdrop blur on phones */
+  .mobile-actions,
+  .ifix-ai-launcher,
+  .ifix-ai-panel,
+  .hero-badge {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+}
