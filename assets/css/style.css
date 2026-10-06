@@ -4972,3 +4972,347 @@ html[data-theme="light"] .why-image::after {
   }
 
 }
+
+/* =====================================================
+   V57 - PREMIUM MOBILE POLISH
+   ===================================================== */
+
+@media (max-width: 680px) {
+
+  body {
+    background: var(--bg);
+  }
+
+
+  /* ---------- HEADER ---------- */
+
+  .site-header {
+    margin: 10px 10px 0;
+
+    width: calc(100% - 20px);
+
+    border:
+      1px solid var(--line);
+
+    border-radius: 18px;
+
+    background:
+      color-mix(
+        in srgb,
+        var(--header-bg) 92%,
+        transparent
+      );
+
+    box-shadow:
+      0 12px 30px rgba(0,0,0,.10);
+  }
+
+
+  /* ---------- HERO ---------- */
+
+  .hero {
+    margin: 12px 10px 0;
+
+    width: calc(100% - 20px);
+
+    border:
+      1px solid var(--line);
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    background: var(--bg-soft);
+
+    box-shadow:
+      0 18px 45px rgba(0,0,0,.10);
+  }
+
+
+  .hero-copy {
+    padding:
+      58px 22px
+      44px;
+  }
+
+
+  .hero h1 {
+    font-size:
+      clamp(48px, 14vw, 66px);
+
+    line-height: .94;
+  }
+
+
+  .hero-text {
+    font-size: 16px;
+    line-height: 1.65;
+  }
+
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+
+  .hero-actions .btn {
+    border-radius: 16px;
+  }
+
+
+  .hero-visual {
+    min-height: 340px;
+
+    border-radius:
+      0 0 24px 24px;
+  }
+
+
+  /* ---------- TRUST STRIP ---------- */
+
+  .trust-strip {
+    margin:
+      12px 10px 0;
+
+    width:
+      calc(100% - 20px);
+
+    border:
+      1px solid var(--line);
+
+    border-radius: 16px;
+
+    background: var(--bg-soft);
+
+    box-shadow:
+      0 10px 25px rgba(0,0,0,.06);
+  }
+
+
+  /* ---------- GENERAL SECTIONS ---------- */
+
+  .section {
+    margin:
+      14px 10px;
+
+    width:
+      calc(100% - 20px);
+
+    padding:
+      76px 18px;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+  }
+
+
+  /* ---------- SERVICES ---------- */
+
+  .services {
+    background:
+      var(--bg-soft);
+  }
+
+
+  .service-grid {
+    gap: 14px !important;
+  }
+
+
+  .service-card {
+    border-radius:
+      18px !important;
+
+    box-shadow:
+      0 12px 28px rgba(0,0,0,.10);
+  }
+
+
+  /* ---------- PROJECTS ---------- */
+
+  .projects {
+    border-radius: 22px;
+
+    background: #101213;
+  }
+
+
+  .project-card,
+  .project-large {
+    border-radius: 18px;
+
+    overflow: hidden;
+  }
+
+
+  /* ---------- REVIEWS ---------- */
+
+  .reviews {
+    background: var(--bg-soft);
+
+    border:
+      1px solid var(--line);
+  }
+
+
+  .review-card,
+  .secondary-rating {
+    border-radius: 18px;
+  }
+
+
+  /* ---------- WHY IFIX ---------- */
+
+  .why-section {
+    margin:
+      14px 10px;
+
+    width:
+      calc(100% - 20px);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+      0 16px 40px rgba(0,0,0,.10);
+  }
+
+
+  .why-image {
+    min-height: 330px;
+  }
+
+
+  .why-content {
+    padding:
+      68px 20px;
+  }
+
+
+  /* ---------- QUOTE ---------- */
+
+  .quote-section {
+    background: var(--bg-soft);
+
+    border:
+      1px solid var(--line);
+  }
+
+
+  .quote-form {
+    padding: 20px;
+
+    border-radius: 18px;
+
+    box-shadow:
+      0 14px 35px rgba(0,0,0,.10);
+  }
+
+
+  .field input,
+  .field select,
+  .field textarea {
+    border-radius: 12px;
+  }
+
+
+  /* ---------- FOOTER ---------- */
+
+  .site-footer {
+    margin:
+      14px 10px
+      90px;
+
+    width:
+      calc(100% - 20px);
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    padding:
+      60px 20px
+      28px;
+  }
+
+
+  /* ---------- MOBILE ACTION BAR ---------- */
+
+  .mobile-actions {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    width: auto;
+
+    min-height: 62px;
+
+    border:
+      1px solid rgba(255,255,255,.12);
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+      0 14px 40px rgba(0,0,0,.22);
+  }
+
+
+  html[data-theme="light"]
+  .mobile-actions {
+    border-color:
+      rgba(0,0,0,.10);
+
+    box-shadow:
+      0 14px 35px rgba(0,0,0,.10);
+  }
+
+
+  .mobile-actions a {
+    border-right:
+      1px solid var(--line);
+  }
+
+
+  .mobile-actions a:first-child {
+    border-radius:
+      18px 0 0 18px;
+  }
+
+
+  .mobile-actions a:last-child {
+    border-radius:
+      0 18px 18px 0;
+  }
+
+
+  /* ---------- FLOATING BUTTONS ---------- */
+
+  .ifix-ai {
+    bottom: 88px;
+  }
+
+
+  .back-to-top {
+    bottom: 88px;
+  }
+
+
+  /* ---------- REMOVE HARSH LINES ---------- */
+
+  .section-heading,
+  .why-list,
+  .rating-block,
+  .footer-bottom {
+    border-color:
+      color-mix(
+        in srgb,
+        var(--line) 65%,
+        transparent
+      );
+  }
+
+}
