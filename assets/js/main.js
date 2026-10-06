@@ -317,3 +317,46 @@ if (!reducedMotion && "IntersectionObserver" in window) {
     observer.observe(el);
   });
 }
+
+/* IFIX V43 — START FROM HERO AFTER RELOAD */
+
+if ("scrollRestoration" in history) {
+  history.scrollRestoration = "manual";
+}
+
+function ifixWasReloaded() {
+  const nav = performance.getEntriesByType?.("navigation");
+
+  if (nav && nav.length) {
+    return nav[0].type === "reload";
+  }
+
+  return performance.navigation &&
+         performance.navigation.type === 1;
+}
+
+if (ifixWasReloaded()) {
+
+  if (window.location.hash) {
+    history.replaceState(
+      null,
+      "",
+      window.location.pathname + window.location.search
+    );
+  }
+
+  window.addEventListener(
+    "pageshow",
+    () => {
+      requestAnimationFrame(() => {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "auto"
+        });
+      });
+    },
+    { once: true }
+  );
+}
+
