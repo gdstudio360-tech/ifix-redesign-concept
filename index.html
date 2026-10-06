@@ -4,54 +4,882 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <!-- Concept site: keep out of search engines -->
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="Unofficial iFix Property website redesign concept by GD Studio 360.">
 
-  <title>iFix Property — Website Redesign Concept</title>
+  <title>iFix Property — Redesign Concept</title>
 
+  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
   <div class="concept-bar">
-    Website redesign concept by GD Studio 360 — not the official iFix Property website
+    <span>Website redesign concept by GD Studio 360</span>
+    <strong>Not the official iFix Property website</strong>
   </div>
 
+  <!-- HEADER -->
+  <header class="site-header" id="top">
+
+    <a class="brand" href="#top" aria-label="iFix Property home">
+      <span class="brand-mark">i</span>
+      <span class="brand-main">Fix</span>
+      <span class="brand-sub">PROPERTY</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav">
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#why">Why iFix</a>
+      <a class="nav-cta" href="#quote">Request a Quote</a>
+    </nav>
+
+  </header>
+
   <main>
+
+    <!-- HERO -->
     <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">PROPERTY • BUILDING • MAINTENANCE</p>
+
+      <div class="hero-copy">
+
+        <p class="eyebrow">
+          IPSWICH • SUFFOLK • ESSEX
+        </p>
 
         <h1>
-          Property Maintenance,<br>
-          Renovations & Building Services
+          Property work
+          <span>done properly.</span>
         </h1>
 
         <p class="hero-text">
-          Professional property services for homeowners, landlords
-          and businesses across Suffolk and Essex.
+          Property maintenance, renovations and building services
+          for homeowners, landlords and businesses — delivered by
+          one experienced local team.
         </p>
 
         <div class="hero-actions">
-          <a href="#quote" class="btn btn-primary">Request a Free Quote</a>
-          <a href="#projects" class="btn btn-secondary">View Our Work</a>
+          <a href="#quote" class="btn btn-primary">
+            Request a Free Quote
+          </a>
+
+          <a href="#projects" class="btn btn-secondary">
+            View Recent Work
+          </a>
         </div>
 
-        <div class="trust-row">
-          <span>★★★★★ Verified Reviews</span>
-          <span>Experienced Team</span>
-          <span>Suffolk & Essex</span>
+        <div class="hero-proof">
+
+          <div>
+            <strong>9.9/10</strong>
+            <span>Checkatrade rating</span>
+          </div>
+
+          <div>
+            <strong>57</strong>
+            <span>Checkatrade reviews</span>
+          </div>
+
+          <div>
+            <strong>25+</strong>
+            <span>years in building</span>
+          </div>
+
         </div>
+
       </div>
+
+      <div class="hero-visual">
+
+        <img
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85"
+          alt="Modern renovated property"
+          fetchpriority="high">
+
+        <div class="hero-image-shade"></div>
+
+        <div class="hero-badge">
+          <span class="stars">★★★★★</span>
+          <strong>Trusted local builders</strong>
+          <small>
+            Maintenance • Renovations • Building
+          </small>
+        </div>
+
+      </div>
+
     </section>
 
-    <section class="placeholder-section">
-      <p>iFix Redesign Concept</p>
-      <h2>Next: Services • Projects • Reviews • Quote System</h2>
+
+    <!-- TRUST BAR -->
+    <section class="trust-strip">
+
+      <span>Residential</span>
+      <i></i>
+
+      <span>Commercial</span>
+      <i></i>
+
+      <span>Landlords</span>
+      <i></i>
+
+      <span>Free Estimates</span>
+
     </section>
+
+
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+
+      <div class="section-heading">
+
+        <div>
+          <p class="eyebrow">WHAT WE DO</p>
+          <h2>One team.<br>Multiple trades.</h2>
+        </div>
+
+        <p>
+          From everyday repairs to larger building projects,
+          iFix can manage more of the work under one roof.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+        <article class="service-card service-featured">
+
+          <span class="service-number">01</span>
+
+          <h3>Property Maintenance</h3>
+
+          <p>
+            Planned and reactive maintenance for homes,
+            landlords, managed properties and businesses.
+          </p>
+
+          <a href="#quote">
+            Get a quote <span>↗</span>
+          </a>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">02</span>
+
+          <h3>Renovations</h3>
+
+          <p>
+            Full refurbishments, bathrooms, kitchens and
+            property improvement projects.
+          </p>
+
+          <a href="#projects">
+            View projects <span>↗</span>
+          </a>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">03</span>
+
+          <h3>Extensions & Building</h3>
+
+          <p>
+            Extensions, alterations and general building
+            works from start through to completion.
+          </p>
+
+          <a href="#quote">
+            Discuss a project <span>↗</span>
+          </a>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">04</span>
+
+          <h3>Fire Doors & Cladding</h3>
+
+          <p>
+            Fire door, cladding and related property safety
+            services for residential and commercial premises.
+          </p>
+
+          <a href="#quote">
+            Make an enquiry <span>↗</span>
+          </a>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">05</span>
+
+          <h3>Electrical & Gas</h3>
+
+          <p>
+            Electrical and gas works delivered as part of a
+            complete property service.
+          </p>
+
+          <a href="#quote">
+            Request a quote <span>↗</span>
+          </a>
+
+        </article>
+
+
+        <article class="service-card">
+
+          <span class="service-number">06</span>
+
+          <h3>Water & Drainage</h3>
+
+          <p>
+            Water supply, drainage installation and property
+            repair solutions.
+          </p>
+
+          <a href="#quote">
+            Tell us about the job <span>↗</span>
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="section projects" id="projects">
+
+      <div class="section-heading">
+
+        <div>
+          <p class="eyebrow">RECENT WORK</p>
+          <h2>Let the work<br>speak for itself.</h2>
+        </div>
+
+        <p>
+          Instead of a basic image gallery, completed jobs
+          become mini case studies that build trust.
+        </p>
+
+      </div>
+
+
+      <div class="project-grid">
+
+        <article class="project-card project-large">
+
+          <img
+            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=85"
+            alt="Modern property renovation"
+            loading="lazy">
+
+          <div class="project-overlay">
+
+            <span>FULL RENOVATION</span>
+
+            <h3>
+              Whole-property
+              refurbishment
+            </h3>
+
+            <p>Residential project</p>
+
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=85"
+            alt="Modern bathroom refurbishment"
+            loading="lazy">
+
+          <div class="project-overlay">
+
+            <span>BATHROOM</span>
+
+            <h3>
+              Bathroom
+              refurbishment
+            </h3>
+
+            <p>Residential project</p>
+
+          </div>
+
+        </article>
+
+
+        <article class="project-card">
+
+          <img
+            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85"
+            alt="Building works"
+            loading="lazy">
+
+          <div class="project-overlay">
+
+            <span>BUILDING WORKS</span>
+
+            <h3>
+              Property improvement
+              project
+            </h3>
+
+            <p>Building & construction</p>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <p class="demo-note">
+        Concept photography is illustrative. The finished website
+        would use iFix's own project photos and real project details.
+      </p>
+
+    </section>
+
+
+    <!-- REVIEWS -->
+    <section class="section reviews" id="reviews">
+
+      <div class="reviews-copy">
+
+        <p class="eyebrow">
+          CUSTOMER REPUTATION
+        </p>
+
+        <h2>
+          Their strongest sales tool
+          already exists.
+        </h2>
+
+        <p class="reviews-intro">
+          iFix already has a strong independent review history.
+          The redesigned website should make that reputation
+          impossible to miss.
+        </p>
+
+
+        <div class="rating-block">
+
+          <strong>
+            9.9<span>/10</span>
+          </strong>
+
+          <div>
+
+            <span class="stars">
+              ★★★★★
+            </span>
+
+            <p>
+              57 reviews on Checkatrade
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="review-stack">
+
+        <article class="review-card">
+
+          <span class="quote-mark">“</span>
+
+          <p>
+            They always turned up when they said they would.
+          </p>
+
+          <footer>
+            <strong>Public customer review</strong>
+            <span>Checkatrade</span>
+          </footer>
+
+        </article>
+
+
+        <article class="review-card review-offset">
+
+          <span class="quote-mark">“</span>
+
+          <p>
+            Our work couldn’t have gone smoother.
+          </p>
+
+          <footer>
+            <strong>Public customer review</strong>
+            <span>TrustATrader</span>
+          </footer>
+
+        </article>
+
+
+        <div class="secondary-rating">
+
+          <span class="stars">
+            ★★★★★
+          </span>
+
+          <div>
+            <strong>5.0 / 5</strong>
+            <span>18 TrustATrader reviews</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- WHY IFIX -->
+    <section class="section why-section" id="why">
+
+      <div class="why-image">
+
+        <img
+          src="https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=1400&q=85"
+          alt="Construction and property work"
+          loading="lazy">
+
+      </div>
+
+
+      <div class="why-content">
+
+        <p class="eyebrow">
+          WHY IFIX
+        </p>
+
+        <h2>
+          Built around trust,
+          not just trades.
+        </h2>
+
+        <p class="why-intro">
+          Customers are choosing who they trust with their home,
+          rental property or business premises. The website should
+          answer that question before they even make contact.
+        </p>
+
+
+        <div class="why-list">
+
+          <div class="why-item">
+
+            <span>01</span>
+
+            <div>
+              <h3>One point of contact</h3>
+
+              <p>
+                Deal directly with the team instead of being
+                passed between third parties.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="why-item">
+
+            <span>02</span>
+
+            <div>
+              <h3>Experienced team</h3>
+
+              <p>
+                More than 25 years of experience in the building
+                industry.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="why-item">
+
+            <span>03</span>
+
+            <div>
+              <h3>Residential & commercial</h3>
+
+              <p>
+                A service built for homeowners, landlords,
+                property managers and businesses.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- QUOTE -->
+    <section class="section quote-section" id="quote">
+
+      <div class="quote-copy">
+
+        <p class="eyebrow">
+          REQUEST A QUOTE
+        </p>
+
+        <h2>
+          Tell us what
+          needs doing.
+        </h2>
+
+        <p>
+          A stronger enquiry form gives the team useful
+          information before the first conversation.
+        </p>
+
+
+        <div class="quote-points">
+
+          <span>✓ Better-qualified enquiries</span>
+          <span>✓ Property postcode included</span>
+          <span>✓ Project timescale captured</span>
+          <span>✓ Optional project photos</span>
+
+        </div>
+
+      </div>
+
+
+      <form
+        class="quote-form"
+        id="demo-quote-form">
+
+        <div class="field full">
+
+          <label for="service">
+            What do you need?
+          </label>
+
+          <select
+            id="service"
+            name="service"
+            required>
+
+            <option value="">
+              Choose a service
+            </option>
+
+            <option>
+              Property maintenance
+            </option>
+
+            <option>
+              Renovation
+            </option>
+
+            <option>
+              Extension / building work
+            </option>
+
+            <option>
+              Fire doors / cladding
+            </option>
+
+            <option>
+              Electrical / gas
+            </option>
+
+            <option>
+              Water / drainage
+            </option>
+
+            <option>
+              Other
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="name">
+            Name
+          </label>
+
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Your name"
+            required>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="phone">
+            Phone
+          </label>
+
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="Your phone number"
+            required>
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="postcode">
+            Property postcode
+          </label>
+
+          <input
+            id="postcode"
+            name="postcode"
+            type="text"
+            placeholder="e.g. IP4">
+
+        </div>
+
+
+        <div class="field">
+
+          <label for="timeline">
+            When do you need it?
+          </label>
+
+          <select
+            id="timeline"
+            name="timeline">
+
+            <option>ASAP</option>
+
+            <option>
+              Within 1 month
+            </option>
+
+            <option>
+              1–3 months
+            </option>
+
+            <option>
+              Just planning / getting quotes
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label for="message">
+            Tell us about the job
+          </label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="What needs doing?"></textarea>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label for="photos">
+            Project photos
+          </label>
+
+          <input
+            id="photos"
+            name="photos"
+            type="file"
+            multiple
+            accept="image/*">
+
+          <small>
+            Concept only — photos are not uploaded anywhere.
+          </small>
+
+        </div>
+
+
+        <button
+          class="btn btn-primary submit-btn"
+          type="submit">
+
+          Request Free Quote
+
+        </button>
+
+
+        <p class="form-note">
+          Demo form only. No personal data is sent or stored.
+        </p>
+
+
+        <div
+          class="form-success"
+          role="status"
+          aria-live="polite">
+        </div>
+
+      </form>
+
+    </section>
+
   </main>
 
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+
+    <div class="footer-top">
+
+      <div class="footer-brand">
+
+        <a class="brand" href="#top">
+
+          <span class="brand-mark">i</span>
+
+          <span class="brand-main">
+            Fix
+          </span>
+
+          <span class="brand-sub">
+            PROPERTY
+          </span>
+
+        </a>
+
+        <p>
+          Property maintenance, renovations and
+          building services across Suffolk & Essex.
+        </p>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <div>
+
+          <strong>Explore</strong>
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#projects">
+            Projects
+          </a>
+
+          <a href="#reviews">
+            Reviews
+          </a>
+
+        </div>
+
+
+        <div>
+
+          <strong>Contact</strong>
+
+          <a href="#quote">
+            Request a Quote
+          </a>
+
+          <a href="#quote">
+            Send an Enquiry
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+      <span>
+        iFix Property — redesign concept
+      </span>
+
+      <span>
+        Designed by GD Studio 360
+      </span>
+
+    </div>
+
+  </footer>
+
+
+  <!-- MOBILE QUICK ACTIONS -->
+  <div class="mobile-actions">
+
+    <a href="#services">
+      Services
+    </a>
+
+    <a href="#projects">
+      Projects
+    </a>
+
+    <a class="mobile-primary" href="#quote">
+      Get Quote
+    </a>
+
+  </div>
+
+
   <script src="assets/js/main.js"></script>
+
 </body>
 </html>
