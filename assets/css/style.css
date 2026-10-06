@@ -1782,3 +1782,641 @@ select {
   }
 
 }
+
+
+/* =========================================================
+   IFIX V2 — LOGO + LIGHT / DARK THEME
+   ========================================================= */
+
+
+/* ---------- THEME VARIABLES ---------- */
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0c0e0f;
+  --bg-soft: #121516;
+  --surface: #171a1c;
+  --surface-2: #1d2123;
+
+  --text: #f7f7f4;
+  --muted: #9ca3a7;
+
+  --line: rgba(255,255,255,.10);
+
+  --header-bg: rgba(12,14,15,.90);
+
+  --input-bg: #101213;
+
+  --footer-bg: #070808;
+
+  --theme-button-bg:
+    rgba(255,255,255,.055);
+
+  --theme-button-border:
+    rgba(255,255,255,.13);
+}
+
+
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f5f3ee;
+  --bg-soft: #ffffff;
+  --surface: #ece9e2;
+  --surface-2: #e5e1d8;
+
+  --text: #171a1b;
+  --muted: #666e70;
+
+  --line: rgba(20,24,25,.12);
+
+  --header-bg: rgba(247,245,240,.92);
+
+  --input-bg: #ffffff;
+
+  --footer-bg: #e7e3db;
+
+  --theme-button-bg:
+    rgba(0,0,0,.035);
+
+  --theme-button-border:
+    rgba(0,0,0,.12);
+}
+
+
+body {
+  background: var(--bg);
+  color: var(--text);
+
+  transition:
+    background-color .28s ease,
+    color .28s ease;
+}
+
+
+/* ---------- LOGO ---------- */
+
+.brand-image {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+
+.ifix-logo {
+  display: block;
+
+  width: 180px;
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+.logo-for-light {
+  display: none;
+}
+
+
+html[data-theme="light"]
+.logo-for-dark {
+  display: none;
+}
+
+
+html[data-theme="light"]
+.logo-for-light {
+  display: block;
+}
+
+
+.footer-logo .ifix-logo {
+  width: 225px;
+}
+
+
+/* Old text-logo rules no longer needed visually */
+
+.brand-mark,
+.brand-main,
+.brand-sub {
+  display: none;
+}
+
+
+/* ---------- HEADER ---------- */
+
+.site-header {
+  background: var(--header-bg);
+
+  transition:
+    background-color .28s ease,
+    border-color .28s ease;
+}
+
+
+.header-controls {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+
+.theme-toggle {
+  min-height: 39px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 0 13px;
+
+  border:
+    1px solid var(--theme-button-border);
+
+  border-radius: 999px;
+
+  background:
+    var(--theme-button-bg);
+
+  color: var(--text);
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition:
+    background .2s ease,
+    color .2s ease,
+    border .2s ease,
+    transform .2s ease;
+}
+
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+}
+
+
+.theme-icon {
+  font-size: 15px;
+
+  line-height: 1;
+}
+
+
+.theme-label {
+  min-width: 29px;
+
+  text-align: left;
+}
+
+
+/* ---------- LIGHT HEADER ---------- */
+
+html[data-theme="light"]
+.site-nav a {
+  color: #51595b;
+}
+
+
+html[data-theme="light"]
+.site-nav a:hover {
+  color: #111516;
+}
+
+
+html[data-theme="light"]
+.site-nav .nav-cta {
+  color: #151515;
+}
+
+
+/* ---------- CONCEPT BAR ---------- */
+
+html[data-theme="light"]
+.concept-bar {
+  background: #dfdcd5;
+
+  color: #6e7476;
+
+  border-bottom-color:
+    rgba(0,0,0,.08);
+}
+
+
+html[data-theme="light"]
+.concept-bar strong {
+  color: #313638;
+}
+
+
+/* ---------- HERO ---------- */
+
+html[data-theme="light"]
+.hero h1 {
+  color: #141718;
+}
+
+
+html[data-theme="light"]
+.hero h1 span {
+  color: #8c9191;
+}
+
+
+html[data-theme="light"]
+.hero-text {
+  color: #62696b;
+}
+
+
+html[data-theme="light"]
+.hero-proof strong {
+  color: #171a1b;
+}
+
+
+html[data-theme="light"]
+.hero-proof span {
+  color: #747b7d;
+}
+
+
+html[data-theme="light"]
+.btn-secondary {
+  color: #181b1c;
+
+  border-color:
+    rgba(0,0,0,.20);
+
+  background:
+    rgba(255,255,255,.35);
+}
+
+
+html[data-theme="light"]
+.btn-secondary:hover {
+  border-color:
+    rgba(0,0,0,.42);
+}
+
+
+/* HERO IMAGE */
+
+.hero-visual img {
+  filter:
+    saturate(.92)
+    contrast(1.04);
+
+  transition:
+    filter .28s ease;
+}
+
+
+html[data-theme="light"]
+.hero-visual img {
+  filter:
+    saturate(.96)
+    contrast(1.01);
+}
+
+
+html[data-theme="light"]
+.hero-badge {
+  color: #f7f7f4;
+
+  background:
+    rgba(16,18,19,.88);
+
+  border-color:
+    rgba(255,255,255,.13);
+}
+
+
+/* ---------- TRUST ---------- */
+
+html[data-theme="light"]
+.trust-strip {
+  background: #eeebe4;
+
+  color: #626a6c;
+}
+
+
+/* ---------- SERVICES ---------- */
+
+html[data-theme="light"]
+.service-card {
+  background: #faf9f6;
+}
+
+
+html[data-theme="light"]
+.service-card:hover {
+  background: #ffffff;
+}
+
+
+html[data-theme="light"]
+.service-featured,
+html[data-theme="light"]
+.service-featured:hover {
+  background: var(--accent);
+
+  color: #141414;
+}
+
+
+html[data-theme="light"]
+.service-card p {
+  color: #626a6c;
+}
+
+
+html[data-theme="light"]
+.service-card a {
+  color: #1a1d1e;
+
+  border-top-color:
+    rgba(0,0,0,.10);
+}
+
+
+html[data-theme="light"]
+.service-featured p {
+  color: rgba(0,0,0,.66);
+}
+
+
+/* ---------- PROJECTS ---------- */
+
+html[data-theme="light"]
+.projects {
+  background: #ece9e2;
+}
+
+
+html[data-theme="light"]
+.project-card {
+  background: #ddd9d1;
+}
+
+
+/* Project overlay always remains dark */
+
+.project-overlay {
+  color: white;
+}
+
+
+/* ---------- REVIEWS ---------- */
+
+html[data-theme="light"]
+.review-card {
+  background: #ffffff;
+
+  border-color:
+    rgba(0,0,0,.10);
+}
+
+
+html[data-theme="light"]
+.review-card > p {
+  color: #222627;
+}
+
+
+html[data-theme="light"]
+.review-card footer {
+  border-top-color:
+    rgba(0,0,0,.09);
+
+  color: #757c7e;
+}
+
+
+html[data-theme="light"]
+.review-card footer strong {
+  color: #424849;
+}
+
+
+html[data-theme="light"]
+.rating-block {
+  border-top-color:
+    rgba(0,0,0,.10);
+}
+
+
+html[data-theme="light"]
+.secondary-rating {
+  border-color:
+    rgba(0,0,0,.10);
+
+  background: #ffffff;
+}
+
+
+/* ---------- WHY ---------- */
+
+html[data-theme="light"]
+.why-section {
+  background: #eae7e0;
+}
+
+
+html[data-theme="light"]
+.why-list {
+  border-top-color:
+    rgba(0,0,0,.10);
+}
+
+
+html[data-theme="light"]
+.why-item {
+  border-bottom-color:
+    rgba(0,0,0,.10);
+}
+
+
+html[data-theme="light"]
+.why-item p {
+  color: #656d6f;
+}
+
+
+/* ---------- QUOTE ---------- */
+
+html[data-theme="light"]
+.quote-form {
+  background: #ffffff;
+
+  border-color:
+    rgba(0,0,0,.10);
+
+  box-shadow:
+    0 24px 70px rgba(0,0,0,.06);
+}
+
+
+html[data-theme="light"]
+.field label {
+  color: #565e60;
+}
+
+
+html[data-theme="light"]
+.field input,
+html[data-theme="light"]
+.field select,
+html[data-theme="light"]
+.field textarea {
+  color: #171a1b;
+
+  background: var(--input-bg);
+
+  border-color:
+    rgba(0,0,0,.14);
+}
+
+
+html[data-theme="light"]
+.field input:focus,
+html[data-theme="light"]
+.field select:focus,
+html[data-theme="light"]
+.field textarea:focus {
+  background: #ffffff;
+
+  border-color: var(--accent);
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+  background: var(--footer-bg);
+}
+
+
+html[data-theme="light"]
+.footer-brand > p {
+  color: #666e70;
+}
+
+
+html[data-theme="light"]
+.footer-links strong {
+  color: #6a7173;
+}
+
+
+html[data-theme="light"]
+.footer-links a {
+  color: #3e4446;
+}
+
+
+html[data-theme="light"]
+.footer-bottom {
+  color: #737a7c;
+
+  border-top-color:
+    rgba(0,0,0,.10);
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width: 980px) {
+
+  .ifix-logo {
+    width: 158px;
+  }
+
+
+  .theme-label {
+    display: none;
+  }
+
+
+  .theme-toggle {
+    width: 41px;
+
+    padding: 0;
+  }
+
+
+  html[data-theme="light"]
+  .site-nav {
+    background:
+      rgba(247,245,240,.985);
+  }
+
+
+  html[data-theme="light"]
+  .site-nav a {
+    color: #191d1e;
+  }
+
+
+  html[data-theme="light"]
+  .site-nav .nav-cta {
+    color: #161616;
+  }
+
+}
+
+
+@media (max-width: 680px) {
+
+  .ifix-logo {
+    width: 140px;
+  }
+
+
+  .header-controls {
+    gap: 2px;
+  }
+
+
+  .theme-toggle {
+    min-height: 38px;
+  }
+
+
+  html[data-theme="light"]
+  .mobile-actions {
+    background:
+      rgba(247,245,240,.97);
+
+    border-top-color:
+      rgba(0,0,0,.10);
+  }
+
+
+  html[data-theme="light"]
+  .mobile-actions a {
+    color: #414749;
+
+    border-right-color:
+      rgba(0,0,0,.08);
+  }
+
+
+  html[data-theme="light"]
+  .mobile-actions .mobile-primary {
+    color: #151515;
+
+    background: var(--accent);
+  }
+
+}
+

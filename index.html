@@ -10,8 +10,20 @@
 
   <title>iFix Property — Redesign Concept</title>
 
-  <link rel="preconnect" href="https://images.unsplash.com">
-  <link rel="stylesheet" href="assets/css/style.css">
+  
+<script>
+(function () {
+  try {
+    const saved = localStorage.getItem("ifix-theme");
+    document.documentElement.dataset.theme =
+      saved === "light" ? "light" : "dark";
+  } catch (e) {
+    document.documentElement.dataset.theme = "dark";
+  }
+})();
+</script>
+
+  <link rel="stylesheet" href="assets/css/style.css?v=3.0">
 </head>
 
 <body>
@@ -22,32 +34,95 @@
   </div>
 
   <!-- HEADER -->
-  <header class="site-header" id="top">
+  
+<header class="site-header" id="top">
 
-    <a class="brand" href="#top" aria-label="iFix Property home">
-      <span class="brand-mark">i</span>
-      <span class="brand-main">Fix</span>
-      <span class="brand-sub">PROPERTY</span>
+  <a
+    class="brand brand-image"
+    href="#top"
+    aria-label="iFix Property home">
+
+    <img
+      class="ifix-logo logo-for-dark"
+      src="assets/images/ifix-logo-dark.svg"
+      alt="iFix Property">
+
+    <img
+      class="ifix-logo logo-for-light"
+      src="assets/images/ifix-logo-light.svg"
+      alt="iFix Property">
+
+  </a>
+
+
+  <nav
+    class="site-nav"
+    aria-label="Primary navigation">
+
+    <a href="#services">
+      Services
     </a>
+
+    <a href="#projects">
+      Projects
+    </a>
+
+    <a href="#reviews">
+      Reviews
+    </a>
+
+    <a href="#why">
+      Why iFix
+    </a>
+
+    <a
+      class="nav-cta"
+      href="#quote">
+
+      Request a Quote
+
+    </a>
+
+  </nav>
+
+
+  <div class="header-controls">
+
+    <button
+      class="theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Switch to light theme"
+      title="Switch theme">
+
+      <span
+        class="theme-icon"
+        aria-hidden="true">
+        ☀
+      </span>
+
+      <span class="theme-label">
+        Light
+      </span>
+
+    </button>
+
 
     <button
       class="menu-toggle"
       type="button"
       aria-label="Open menu"
       aria-expanded="false">
+
       <span></span>
       <span></span>
+
     </button>
 
-    <nav class="site-nav">
-      <a href="#services">Services</a>
-      <a href="#projects">Projects</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#why">Why iFix</a>
-      <a class="nav-cta" href="#quote">Request a Quote</a>
-    </nav>
+  </div>
 
-  </header>
+</header>
+
 
   <main>
 
@@ -105,8 +180,8 @@
       <div class="hero-visual">
 
         <img
-          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1800&q=85"
-          alt="Modern renovated property"
+          src="assets/images/ifix-roof-renovation.png"
+          alt="iFix roof and building project"
           fetchpriority="high">
 
         <div class="hero-image-shade"></div>
@@ -296,20 +371,19 @@
         <article class="project-card project-large">
 
           <img
-            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1600&q=85"
-            alt="Modern property renovation"
+            src="assets/images/ifix-house-renovation.png"
+            alt="iFix house renovation project"
             loading="lazy">
 
           <div class="project-overlay">
 
-            <span>FULL RENOVATION</span>
+            <span>HOUSE RENOVATION</span>
 
             <h3>
-              Whole-property
-              refurbishment
+              Property renovation
             </h3>
 
-            <p>Residential project</p>
+            <p>iFix project gallery</p>
 
           </div>
 
@@ -319,20 +393,19 @@
         <article class="project-card">
 
           <img
-            src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?auto=format&fit=crop&w=1200&q=85"
-            alt="Modern bathroom refurbishment"
+            src="assets/images/ifix-bathroom-renovation.png"
+            alt="iFix bathroom renovation project"
             loading="lazy">
 
           <div class="project-overlay">
 
-            <span>BATHROOM</span>
+            <span>BATHROOM RENOVATION</span>
 
             <h3>
-              Bathroom
-              refurbishment
+              Modern bathroom renovation
             </h3>
 
-            <p>Residential project</p>
+            <p>iFix project gallery</p>
 
           </div>
 
@@ -342,20 +415,19 @@
         <article class="project-card">
 
           <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85"
-            alt="Building works"
+            src="assets/images/ifix-bathroom-refit.png"
+            alt="iFix bathroom refit project"
             loading="lazy">
 
           <div class="project-overlay">
 
-            <span>BUILDING WORKS</span>
+            <span>BATHROOM REFIT</span>
 
             <h3>
-              Property improvement
-              project
+              Complete bathroom refit
             </h3>
 
-            <p>Building & construction</p>
+            <p>iFix project gallery</p>
 
           </div>
 
@@ -365,8 +437,8 @@
 
 
       <p class="demo-note">
-        Concept photography is illustrative. The finished website
-        would use iFix's own project photos and real project details.
+        Project photography shown here is sourced from the current
+        public iFix Property website for this private redesign concept.
       </p>
 
     </section>
@@ -474,8 +546,8 @@
       <div class="why-image">
 
         <img
-          src="https://images.unsplash.com/photo-1523413363574-c30aa1c2a516?auto=format&fit=crop&w=1400&q=85"
-          alt="Construction and property work"
+          src="assets/images/ifix-commercial.png"
+          alt="iFix commercial building project"
           loading="lazy">
 
       </div>
@@ -784,19 +856,24 @@
 
       <div class="footer-brand">
 
-        <a class="brand" href="#top">
+        
+<a
+  class="brand brand-image footer-logo"
+  href="#top"
+  aria-label="iFix Property home">
 
-          <span class="brand-mark">i</span>
+  <img
+    class="ifix-logo logo-for-dark"
+    src="assets/images/ifix-logo-dark.svg"
+    alt="iFix Property">
 
-          <span class="brand-main">
-            Fix
-          </span>
+  <img
+    class="ifix-logo logo-for-light"
+    src="assets/images/ifix-logo-light.svg"
+    alt="iFix Property">
 
-          <span class="brand-sub">
-            PROPERTY
-          </span>
+</a>
 
-        </a>
 
         <p>
           Property maintenance, renovations and
@@ -879,7 +956,7 @@
   </div>
 
 
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js?v=3.0"></script>
 
 </body>
 </html>

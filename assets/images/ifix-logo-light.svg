@@ -1,0 +1,166 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="660"
+  height="190"
+  viewBox="0 0 660 190"
+  role="img"
+  aria-label="iFix Property"
+>
+
+  <defs>
+    <linearGradient
+      id="goldLight"
+      x1="0"
+      y1="0"
+      x2="1"
+      y2="1">
+
+      <stop
+        offset="0%"
+        stop-color="#e6bd62"/>
+
+      <stop
+        offset="48%"
+        stop-color="#c99332"/>
+
+      <stop
+        offset="100%"
+        stop-color="#93651f"/>
+
+    </linearGradient>
+  </defs>
+
+
+  <!-- HOUSE ICON -->
+
+  <g transform="translate(8,18)">
+
+    <path
+      d="
+        M10 74
+        L72 22
+        L134 74
+        L134 141
+        L98 141
+        L98 90
+        L46 90
+        L46 141
+        L10 141
+        Z
+      "
+      fill="#151819"/>
+
+    <path
+      d="
+        M0 69
+        L72 8
+        L146 69
+        L131 87
+        L72 39
+        L15 87
+        Z
+      "
+      fill="url(#goldLight)"/>
+
+
+    <g fill="url(#goldLight)">
+
+      <rect
+        x="57"
+        y="67"
+        width="13"
+        height="13"
+        rx="1"/>
+
+      <rect
+        x="74"
+        y="67"
+        width="13"
+        height="13"
+        rx="1"/>
+
+      <rect
+        x="57"
+        y="84"
+        width="13"
+        height="13"
+        rx="1"/>
+
+      <rect
+        x="74"
+        y="84"
+        width="13"
+        height="13"
+        rx="1"/>
+
+    </g>
+
+  </g>
+
+
+  <!-- iFix -->
+
+  <g transform="translate(174,9)">
+
+    <circle
+      cx="27"
+      cy="36"
+      r="17"
+      fill="url(#goldLight)"/>
+
+    <rect
+      x="11"
+      y="61"
+      width="33"
+      height="90"
+      rx="2"
+      fill="#151819"/>
+
+
+    <text
+      x="55"
+      y="151"
+      font-family="Arial, Helvetica, sans-serif"
+      font-size="126"
+      font-weight="900"
+      letter-spacing="-10"
+      fill="#151819">
+      Fix
+    </text>
+
+
+    <path
+      d="
+        M323 62
+        L376 20
+        L444 75
+        L432 90
+        L376 47
+        L335 79
+        Z
+      "
+      fill="url(#goldLight)"/>
+
+    <rect
+      x="425"
+      y="38"
+      width="15"
+      height="30"
+      rx="2"
+      fill="url(#goldLight)"/>
+
+  </g>
+
+
+  <text
+    x="185"
+    y="183"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="28"
+    font-weight="600"
+    letter-spacing="16"
+    fill="#555D5F">
+    PROPERTY
+  </text>
+
+</svg>
