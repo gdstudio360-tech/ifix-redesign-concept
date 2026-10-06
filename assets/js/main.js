@@ -252,3 +252,68 @@ if (form && success) {
 
 }
 
+
+
+/* IFIX POLISH V40 */
+
+const polishHeader =
+  document.querySelector(".site-header");
+
+function polishHeaderState() {
+  if (!polishHeader) return;
+
+  polishHeader.classList.toggle(
+    "is-scrolled",
+    window.scrollY > 20
+  );
+}
+
+polishHeaderState();
+
+window.addEventListener(
+  "scroll",
+  polishHeaderState,
+  { passive: true }
+);
+
+
+const reducedMotion =
+  window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+if (!reducedMotion && "IntersectionObserver" in window) {
+
+  const revealElements =
+    document.querySelectorAll(
+      ".service-card, .project-card, .review-card, .why-item, .quote-form"
+    );
+
+  revealElements.forEach(el => {
+    el.classList.add("reveal-v40");
+  });
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+
+        });
+
+      },
+      {
+        threshold: .12,
+        rootMargin: "0px 0px -30px 0px"
+      }
+    );
+
+  revealElements.forEach(el => {
+    observer.observe(el);
+  });
+}

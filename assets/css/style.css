@@ -2528,3 +2528,240 @@ html[data-theme="light"] .ifix-logo-light-exact {
   }
 
 }
+
+
+/* IFIX POLISH V40 */
+
+.site-header {
+  transition:
+    background-color .28s ease,
+    border-color .28s ease,
+    box-shadow .28s ease;
+}
+
+.site-header.is-scrolled {
+  box-shadow: 0 10px 35px rgba(0,0,0,.16);
+}
+
+html[data-theme="light"] .site-header.is-scrolled {
+  box-shadow: 0 10px 35px rgba(0,0,0,.07);
+}
+
+
+/* Logo */
+
+.site-header .ifix-logo-exact {
+  height: 62px !important;
+}
+
+.footer-logo .ifix-logo-exact {
+  height: 76px !important;
+}
+
+
+/* Hero */
+
+.hero-text {
+  max-width: 610px;
+}
+
+.hero-visual img {
+  object-position: 50% 52%;
+}
+
+.hero-badge {
+  box-shadow: 0 18px 50px rgba(0,0,0,.24);
+}
+
+
+/* Buttons */
+
+.btn,
+.nav-cta,
+.theme-toggle {
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease,
+    background-color .2s ease,
+    border-color .2s ease;
+}
+
+.btn-primary:hover,
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(228,182,83,.20);
+}
+
+
+/* Services */
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: var(--accent);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform .35s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-featured::before {
+  display: none;
+}
+
+
+/* Projects */
+
+.project-card {
+  border-radius: 14px;
+}
+
+.project-card img {
+  object-position: center;
+}
+
+.project-card::after {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0,0,0,.02) 30%,
+      rgba(0,0,0,.87) 100%
+    );
+}
+
+
+/* Reviews */
+
+.review-card {
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(228,182,83,.23);
+  box-shadow: 0 20px 55px rgba(0,0,0,.13);
+}
+
+html[data-theme="light"] .review-card:hover {
+  box-shadow: 0 20px 55px rgba(0,0,0,.07);
+}
+
+
+/* Why */
+
+.why-image {
+  overflow: hidden;
+}
+
+.why-image img {
+  transition: transform 1.1s ease;
+}
+
+.why-section:hover .why-image img {
+  transform: scale(1.025);
+}
+
+
+/* Quote */
+
+.field input,
+.field select,
+.field textarea {
+  min-height: 50px;
+}
+
+.field textarea {
+  min-height: 145px;
+}
+
+
+/* Scroll reveal */
+
+.reveal-v40 {
+  opacity: 0;
+  transform: translateY(22px);
+
+  transition:
+    opacity .6s ease,
+    transform .6s ease;
+}
+
+.reveal-v40.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Mobile */
+
+@media (max-width: 680px) {
+
+  .site-header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .site-header .ifix-logo-exact {
+    height: 47px !important;
+  }
+
+  .hero-copy {
+    min-height: auto;
+    padding: 62px 20px 55px;
+  }
+
+  .hero h1 {
+    font-size: clamp(50px, 15vw, 68px);
+    line-height: .93;
+  }
+
+  .hero-visual {
+    min-height: 360px;
+  }
+
+  .section {
+    padding-top: 82px;
+    padding-bottom: 82px;
+  }
+
+  .project-card,
+  .project-large {
+    min-height: 390px;
+  }
+
+  .project-overlay h3 {
+    font-size: 29px;
+  }
+
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .reveal-v40 {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+}
